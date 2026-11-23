@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Navbar } from './components/Navbar'
 import { HeroSection } from './components/HeroSection'
-import { SectionTabs } from './components/SectionTabs'
 import { AboutSection } from './components/AboutSection'
 import { ExperienceSection } from './components/ExperienceSection'
 import { OrganizationSection } from './components/OrganizationSection'
@@ -21,9 +20,8 @@ function App() {
     }
     return 'portfolio'
   })
-  const [activeTab, setActiveTab] = useState<string>('all')
 
-  // Listen to hash changes for deep linking (e.g. #kontak)
+  // Deep linking hash synchronization
   useEffect(() => {
     const handleHash = () => {
       const hash = window.location.hash.replace('#', '')
@@ -40,7 +38,7 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHash)
   }, [currentView])
 
-  // Progressive background fetch if backend API is online
+  // Background fetch if backend is active
   useEffect(() => {
     fetch('/api/portfolio')
       .then(res => res.json())
@@ -69,94 +67,60 @@ function App() {
       setCurrentView('portfolio')
       window.location.hash = ''
     }
-    
+
     if (sectionId === 'beranda') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
-      setActiveTab('all')
       return
     }
 
-    setActiveTab(sectionId)
     setTimeout(() => {
       const element = document.getElementById(sectionId)
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
-    }, 50)
+    }, 40)
   }
 
-  // If in Contact Page view, render full dedicated page (NO MODAL POPUP)
+  // Full-page Contact View (NO MODAL POPUP)
   if (currentView === 'contact') {
     return <ContactPage profile={data.profile} onBack={navigateToPortfolio} />
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFBFD] text-slate-900 selection:bg-slate-900 selection:text-white">
-      {/* Top Fixed Executive Navbar */}
+    <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white">
+      {/* Minimal Top Navigation */}
       <Navbar
         name={data.profile.name}
-        activeSection={activeTab}
         onNavigateContact={navigateToContact}
         onNavigateSection={handleNavigateSection}
       />
 
-      {/* Main Executive Container */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-16">
-        
-        {/* Executive Hero Section */}
+      {/* Main Single-Column Editorial Container */}
+      <main className="max-w-4xl mx-auto px-6 pt-16 pb-12">
         <HeroSection
           profile={data.profile}
-          highlights={data.highlights}
           onNavigateContact={navigateToContact}
         />
 
-        {/* Interactive Sticky Tab Bar Filter */}
-        <SectionTabs
-          activeTab={activeTab}
-          onTabChange={(tabId) => {
-            setActiveTab(tabId)
-            if (tabId !== 'all') {
-              const el = document.getElementById(tabId)
-              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }
-          }}
+        <AboutSection about={data.about} />
+
+        <ExperienceSection experiences={data.experience} />
+
+        <OrganizationSection
+          organizations={data.organizations}
+          roles={data.organizationRoles}
+          images={data.organizationImages}
         />
 
-        {/* Content Sections Flow (Clean, Spacious, Uncluttered) */}
-        <div className="flex flex-col gap-8">
-          
-          {(activeTab === 'all' || activeTab === 'tentang') && (
-            <AboutSection about={data.about} />
-          )}
+        <PublicSpeakingSection speaking={data.publicSpeaking} />
 
-          {(activeTab === 'all' || activeTab === 'pengalaman') && (
-            <ExperienceSection experiences={data.experience} />
-          )}
-
-          {(activeTab === 'all' || activeTab === 'organisasi') && (
-            <OrganizationSection
-              organizations={data.organizations}
-              roles={data.organizationRoles}
-              images={data.organizationImages}
-            />
-          )}
-
-          {(activeTab === 'all' || activeTab === 'public-speaking') && (
-            <PublicSpeakingSection speaking={data.publicSpeaking} />
-          )}
-
-          {(activeTab === 'all' || activeTab === 'prestasi') && (
-            <AchievementsSection
-              achievements={data.achievements}
-              images={data.achievementImages}
-            />
-          )}
-
-        </div>
-
+        <AchievementsSection
+          achievements={data.achievements}
+          images={data.achievementImages}
+        />
       </main>
 
-      {/* Modern Executive Footer */}
+      {/* Minimal Clean Footer */}
       <Footer
         name={data.profile.name}
         onNavigateContact={navigateToContact}
