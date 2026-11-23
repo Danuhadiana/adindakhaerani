@@ -1,0 +1,93 @@
+{
+  "profile": {
+    "name": "Adinda Khaerani",
+    "headline": "Mahasiswi Biologi UIN Syarif Hidayatullah Jakarta | Lulusan Terbaik Teknologi Farmasi SMKN 15 Kota Bekasi (2026) | Quality Assurance & Pharmacy Intern | Master of Ceremony (MC)",
+    "location": "Kota Bekasi, Jawa Barat, Indonesia",
+    "email": "adindakhaerani2007@gmail.com",
+    "instagram": "@adindakhrnii",
+    "photo": "/images/page2_img2.jpeg",
+    "affiliations": [
+      { "name": "UIN Syarif Hidayatullah Jakarta", "role": "Mahasiswi Biologi" },
+      { "name": "SMKN 15 Kota Bekasi", "role": "Alumni Teknologi Farmasi" }
+    ]
+  },
+  "about": {
+    "text": "Halo, saya Adinda Khaerani. Saat ini saya merupakan mahasiswi program studi Biologi di UIN Syarif Hidayatullah Jakarta dengan latar belakang pendidikan Teknologi Farmasi dari SMKN 15 Kota Bekasi. Saya memiliki dasar pemahaman regulasi kefarmasian serta ketelitian kerja yang baik. Semasa sekolah, saya sering mendapatkan kepercayaan untuk berkoordinasi dalam berbagai kegiatan serta aktif memandu acara sebagai Master of Ceremony (MC). Saya senantiasa berkomitmen untuk menjaga keseimbangan antara tanggung jawab organisasi dan pencapaian akademik yang optimal.",
+    "focus": [
+      "Beradaptasi dengan keilmuan Biologi Murni",
+      "Mengasah keterampilan riset laboratorium secara mendalam",
+      "Cepat menguasai tantangan akademik baru di dunia perkuliahan"
+    ]
+  },
+  "experience": [
+    {
+      "company": "PT Genero Pharmaceuticals",
+      "role": "Quality Assurance | Documentation",
+      "points": [
+        "Mengelola, memeriksa, dan merapikan dokumen mutu industri",
+        "Mempelajari alur peninjauan dokumen batch record produksi",
+        "Memastikan seluruh dokumentasi sesuai dengan standar CPOB"
+      ],
+      "result": "Mengasah ketelitian tingkat tinggi dalam administrasi regulasi farmasi",
+      "images": ["/images/page3_img3.jpeg", "/images/page3_img5.jpeg", "/images/page3_img7.jpeg"]
+    },
+    {
+      "company": "UPTD Puskesmas Bojong Menteng",
+      "role": "Farmasi Intern",
+      "points": [
+        "Melakukan skrining resep dan meracik sediaan obat",
+        "Mengelola stok obat gudang dengan sistem FIFO/FEFO",
+        "Memberikan edukasi aturan pakai obat kepada pasien"
+      ],
+      "result": "Melayani ratusan resep dokter per hari dan bisa membaca tulisan resep dokter manual",
+      "images": ["/images/page4_img5.jpeg", "/images/page4_img7.jpeg", "/images/page4_img9.jpeg"]
+    }
+  ],
+  "organizations": [
+    {
+      "title": "Ketua Sekbid 5 OSIS",
+      "period": "2024/2025",
+      "type": "leadership"
+    },
+    {
+      "title": "Sekretaris Umum OSIS",
+      "period": "2023/2024",
+      "type": "leadership"
+    },
+    {
+      "title": "Sekretaris Paskibra",
+      "period": "2023–2026",
+      "type": "leadership"
+    }
+  ],
+  "organizationRoles": [
+    "Dipercaya menjadi Ketua Pelaksana di beberapa event sekolah",
+    "Mengelola administrasi organisasi, surat-menyurat, dan penyusunan proposal acara",
+    "Memimpin koordinasi antar-divisi demi kelancaran eksekusi lapangan"
+  ],
+  "organizationImages": ["/images/page5_img1.jpeg", "/images/page5_img2.jpeg", "/images/page5_img3.jpeg", "/images/page5_img4.jpeg", "/images/page5_img5.jpeg"],
+  "publicSpeaking": {
+    "title": "Master of Ceremony",
+    "scopes": [
+      { "category": "Event Sekolah", "description": "Memandu berbagai perlombaan, classmeeting, dan acara internal sekolah" },
+      { "category": "Lingkungan Rumah", "description": "Memandu festival warga, hari besar nasional, hingga acara formal lingkungan" },
+      { "category": "Spontaneous Speaking", "description": "Dipercaya secara mendadak untuk mengumumkan informasi penting di sekolah karena dinilai tanggap situasi" }
+    ],
+    "images": ["/images/page6_img2.jpeg", "/images/page6_img3.jpeg", "/images/page6_img4.jpeg", "/images/page6_img5.jpeg"]
+  },
+  "achievements": [
+    { "title": "Lulusan Terbaik SMKN 15 Kota Bekasi", "year": "2026", "description": "Meraih predikat nilai akademis tertinggi di jurusan Teknologi Farmasi", "highlight": true },
+    { "title": "Juara 1 Presentasi", "description": "Sebagai Apresiasi Siswa Berprestasi oleh Cadisdik Wilayah III Jawa Barat" },
+    { "title": "Penyaji Informasi Terbaik", "description": "Pada Lomba Meracik Sediaan Obat di Stikes Medistra" },
+    { "title": "Juara 3 Ratoh Jaroe", "description": "Kompetisi tari tradisional" },
+    { "title": "Delegasi LKBB Paskibra dan Tari", "description": "Perwakilan sekolah dalam lomba baris-berbaris dan tari" },
+    { "title": "Beasiswa Pendidikan", "description": "Dari Institut Stiami" }
+  ],
+  "achievementImages": ["/images/page7_img3.jpeg", "/images/page7_img5.jpeg", "/images/page7_img8.jpeg", "/images/page7_img9.jpeg"],
+  "highlights": [
+    { "label": "Lulusan Terbaik", "detail": "Farmasi 2026" },
+    { "label": "QA Documentation", "detail": "Standar CPOB" },
+    { "label": "Pharmacy Intern", "detail": "Puskesmas" },
+    { "label": "Master of Ceremony", "detail": "Event & Formal" }
+  ]
+}
