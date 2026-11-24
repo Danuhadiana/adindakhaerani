@@ -32,9 +32,9 @@ export function AboutSection({ about }: AboutSectionProps) {
           </h3>
           <ul className="space-y-2 text-sm text-zinc-600">
             {about.focus.map((item, i) => (
-              <li key={i} className="flex items-start gap-2.5">
-                <span className="text-zinc-400 mt-1">&bull;</span>
-                <span>{item}</span>
+              <li key={i} className="flex items-start gap-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 shrink-0"></span>
+                <span className="leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>

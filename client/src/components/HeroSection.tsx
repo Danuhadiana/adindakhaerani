@@ -9,48 +9,77 @@ interface HeroSectionProps {
 
 export function HeroSection({ profile, onNavigateContact }: HeroSectionProps) {
   return (
-    <section className="pt-10 pb-16 border-b border-zinc-200/80">
-      <div className="flex flex-col-reverse md:flex-row items-start justify-between gap-8 md:gap-12">
+    <section className="pt-8 pb-14 border-b border-zinc-200">
+      <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-8 md:gap-12">
         
-        {/* Left Column: Text & Credibility */}
-        <div className="flex-1">
-          <p className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">
-            Portofolio Profesional
-          </p>
+        {/* Left Column: Typography, Bio & Structured Metadata */}
+        <div className="flex-1 min-w-0">
+          
+          <div className="inline-flex items-center gap-2 mb-3">
+            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
+              Portofolio Profesional
+            </span>
+          </div>
 
-          <h1 className="text-3xl sm:text-4xl font-bold text-zinc-950 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-zinc-950 tracking-tight leading-tight">
             {profile.name}
           </h1>
 
-          <p className="mt-2.5 text-base text-zinc-700 font-medium leading-relaxed">
-            Mahasiswi Biologi UIN Syarif Hidayatullah Jakarta dan Lulusan Terbaik Teknologi Farmasi SMKN 15 Kota Bekasi.
+          <p className="mt-2.5 text-base sm:text-lg text-zinc-800 font-medium leading-snug">
+            Mahasiswi Biologi UIN Syarif Hidayatullah Jakarta &bull; Lulusan Terbaik Teknologi Farmasi SMKN 15 Bekasi
           </p>
 
-          <p className="mt-3 text-sm text-zinc-600 leading-relaxed font-normal">
-            Memadukan ketelitian pengujian mutu industri farmasi (CPOB), dedikasi riset biologi laboratorium, serta pengalaman koordinasi kepemimpinan dan pemandu acara (Master of Ceremony).
+          <p className="mt-3.5 text-sm text-zinc-600 leading-relaxed font-normal max-w-2xl">
+            Memadukan ketelitian pengujian mutu industri farmasi standar CPOB, dedikasi riset biologi laboratorium, serta rekam jejak kepemimpinan organisasi dan pemandu acara (Master of Ceremony).
           </p>
 
-          {/* Education Lines */}
-          <div className="mt-6 space-y-1.5 text-xs text-zinc-600">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
-              <span><strong>UIN Syarif Hidayatullah Jakarta</strong> &bull; Mahasiswi Biologi (Aktif)</span>
+          {/* Structured Credential Grid (Clean, No Cluttered Bullets) */}
+          <div className="mt-6 pt-5 border-t border-zinc-200/80 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 text-xs">
+            <div>
+              <span className="text-zinc-400 font-medium block text-[11px] uppercase tracking-wider mb-0.5">
+                Pendidikan Tinggi
+              </span>
+              <p className="font-semibold text-zinc-900 text-xs sm:text-sm">
+                UIN Syarif Hidayatullah Jakarta
+              </p>
+              <p className="text-zinc-500 text-[11px]">Program Studi S1 Biologi (Mahasiswi Aktif)</p>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
-              <span><strong>SMKN 15 Kota Bekasi</strong> &bull; Lulusan Terbaik Farmasi (2026)</span>
+
+            <div>
+              <span className="text-zinc-400 font-medium block text-[11px] uppercase tracking-wider mb-0.5">
+                Pendidikan Menengah Kejuruan
+              </span>
+              <p className="font-semibold text-zinc-900 text-xs sm:text-sm">
+                SMKN 15 Kota Bekasi
+              </p>
+              <p className="text-zinc-500 text-[11px]">Lulusan Terbaik Jurusan Farmasi (2026)</p>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-400"></span>
-              <span>Domisili: {profile.location}</span>
+
+            <div>
+              <span className="text-zinc-400 font-medium block text-[11px] uppercase tracking-wider mb-0.5">
+                Fokus Keahlian
+              </span>
+              <p className="font-semibold text-zinc-900 text-xs">
+                Quality Assurance (CPOB), Riset Lab &amp; MC
+              </p>
+            </div>
+
+            <div>
+              <span className="text-zinc-400 font-medium block text-[11px] uppercase tracking-wider mb-0.5">
+                Domisili
+              </span>
+              <p className="font-semibold text-zinc-900 text-xs">
+                {profile.location}
+              </p>
             </div>
           </div>
 
-          {/* Action Links */}
+          {/* Action Buttons */}
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <button
               onClick={onNavigateContact}
-              className="text-xs font-semibold text-white bg-zinc-900 hover:bg-zinc-800 px-5 py-2.5 rounded-lg transition-colors flex items-center gap-2 cursor-pointer"
+              className="text-xs font-semibold text-white bg-zinc-900 hover:bg-zinc-800 px-5 py-2.5 rounded-lg transition-colors flex items-center gap-2 cursor-pointer shadow-2xs"
             >
               <Mail size={14} />
               <span>Hubungi Saya</span>
@@ -77,13 +106,20 @@ export function HeroSection({ profile, onNavigateContact }: HeroSectionProps) {
           </div>
         </div>
 
-        {/* Right Column: Clean, Uncluttered Portrait Photo */}
-        <div className="shrink-0 w-32 h-32 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-zinc-200/90 bg-zinc-100 shadow-xs">
-          <img
-            src={profile.photo || "/images/profile.jpg"}
-            alt={profile.name}
-            className="w-full h-full object-cover object-top"
-          />
+        {/* Right Column: Properly Proportioned 3:4 Pas Foto Card */}
+        <div className="shrink-0 flex flex-col items-center">
+          <div className="w-44 sm:w-52 aspect-[3/4] rounded-2xl overflow-hidden border border-zinc-200 shadow-sm bg-zinc-100 relative">
+            <img
+              src={profile.photo || "/images/profile.jpg"}
+              alt={profile.name}
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+          
+          <div className="mt-2.5 text-center">
+            <p className="text-xs font-bold text-zinc-900 tracking-tight">{profile.name}</p>
+            <p className="text-[11px] text-zinc-500 font-medium">Lulusan Terbaik Farmasi 2026</p>
+          </div>
         </div>
 
       </div>

@@ -29,9 +29,9 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
 
             <ul className="space-y-1.5 text-sm text-zinc-600">
               {exp.points.map((pt, pIdx) => (
-                <li key={pIdx} className="flex items-start gap-2.5">
-                  <span className="text-zinc-400 mt-1">&bull;</span>
-                  <span>{pt}</span>
+                <li key={pIdx} className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 shrink-0"></span>
+                  <span className="leading-relaxed">{pt}</span>
                 </li>
               ))}
             </ul>
