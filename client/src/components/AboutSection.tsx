@@ -15,7 +15,7 @@ const competencies = [
 
 export function AboutSection({ about }: AboutSectionProps) {
   return (
-    <section id="tentang" className="py-12 border-b border-zinc-200/80 scroll-mt-20">
+    <section id="tentang" className="py-8 sm:py-12 border-b border-zinc-200/80 scroll-mt-16 sm:scroll-mt-20">
       <div className="max-w-2xl">
         <h2 className="text-xl font-bold text-zinc-950 tracking-tight">
           Tentang Profil

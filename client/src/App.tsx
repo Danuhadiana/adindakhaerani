@@ -96,7 +96,7 @@ function App() {
       />
 
       {/* Main Single-Column Editorial Container */}
-      <main className="max-w-4xl mx-auto px-6 pt-16 pb-12">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-12">
         <HeroSection
           profile={data.profile}
           onNavigateContact={navigateToContact}

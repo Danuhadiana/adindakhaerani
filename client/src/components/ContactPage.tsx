@@ -43,11 +43,11 @@ export function ContactPage({ profile, onBack }: ContactPageProps) {
   return (
     <div className="min-h-screen bg-white text-zinc-900 pb-20">
       {/* Top Bar */}
-      <header className="border-b border-zinc-200">
-        <div className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+      <header className="border-b border-zinc-200 sticky top-0 bg-white/95 backdrop-blur-sm z-40">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-600 hover:text-zinc-950 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-700 hover:text-zinc-950 transition-colors cursor-pointer py-2 min-h-[44px]"
           >
             <ArrowLeft size={16} />
             <span>Kembali ke Portofolio</span>
@@ -57,7 +57,7 @@ export function ContactPage({ profile, onBack }: ContactPageProps) {
       </header>
 
       {/* Main Container */}
-      <main className="max-w-2xl mx-auto px-6 pt-12">
+      <main className="max-w-2xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10">
         <h1 className="text-2xl sm:text-3xl font-bold text-zinc-950 tracking-tight">
           Hubungi Adinda Khaerani
         </h1>
@@ -136,7 +136,7 @@ export function ContactPage({ profile, onBack }: ContactPageProps) {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Nama Anda atau Instansi"
-                  className="w-full px-3.5 py-2 text-sm bg-white border border-zinc-200 rounded-lg focus:outline-none focus:border-zinc-900 transition-colors"
+                  className="w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border border-zinc-200 rounded-lg focus:outline-none focus:border-zinc-900 transition-colors"
                 />
               </div>
 
@@ -150,7 +150,7 @@ export function ContactPage({ profile, onBack }: ContactPageProps) {
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   placeholder="alamat@email.com"
-                  className="w-full px-3.5 py-2 text-sm bg-white border border-zinc-200 rounded-lg focus:outline-none focus:border-zinc-900 transition-colors"
+                  className="w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border border-zinc-200 rounded-lg focus:outline-none focus:border-zinc-900 transition-colors"
                 />
               </div>
 
@@ -161,7 +161,7 @@ export function ContactPage({ profile, onBack }: ContactPageProps) {
                 <select
                   value={form.category}
                   onChange={(e) => setForm({ ...form, category: e.target.value })}
-                  className="w-full px-3.5 py-2 text-sm bg-white border border-zinc-200 rounded-lg focus:outline-none focus:border-zinc-900 transition-colors"
+                  className="w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border border-zinc-200 rounded-lg focus:outline-none focus:border-zinc-900 transition-colors"
                 >
                   <option value="Peluang Kerja & Magang">Peluang Kerja &amp; Magang Farmasi / QA</option>
                   <option value="Pemandu Acara / MC">Undangan Pemandu Acara (MC)</option>
@@ -180,7 +180,7 @@ export function ContactPage({ profile, onBack }: ContactPageProps) {
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="Tuliskan pesan Anda di sini..."
-                  className="w-full px-3.5 py-2 text-sm bg-white border border-zinc-200 rounded-lg focus:outline-none focus:border-zinc-900 transition-colors resize-none"
+                  className="w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border border-zinc-200 rounded-lg focus:outline-none focus:border-zinc-900 transition-colors resize-none"
                 />
               </div>
 
@@ -188,9 +188,9 @@ export function ContactPage({ profile, onBack }: ContactPageProps) {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="text-xs font-semibold px-6 py-2.5 bg-zinc-900 text-white rounded-lg hover:bg-zinc-800 transition-colors flex items-center gap-2 cursor-pointer disabled:opacity-50"
+                  className="w-full sm:w-auto text-xs font-semibold px-6 py-3 sm:py-2.5 bg-zinc-900 text-white rounded-lg hover:bg-zinc-800 transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 min-h-[44px]"
                 >
-                  <Send size={14} />
+                  <Send size={15} />
                   <span>{status === 'submitting' ? 'Mengirim...' : 'Kirim Pesan'}</span>
                 </button>
               </div>

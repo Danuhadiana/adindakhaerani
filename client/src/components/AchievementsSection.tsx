@@ -7,7 +7,7 @@ interface AchievementsSectionProps {
 
 export function AchievementsSection({ achievements, images }: AchievementsSectionProps) {
   return (
-    <section id="prestasi" className="py-12 border-b border-zinc-200/80 scroll-mt-20">
+    <section id="prestasi" className="py-8 sm:py-12 border-b border-zinc-200/80 scroll-mt-16 sm:scroll-mt-20">
       <h2 className="text-xl font-bold text-zinc-950 tracking-tight mb-8">
         Prestasi &amp; Penghargaan
       </h2>

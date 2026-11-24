@@ -24,15 +24,15 @@ export function Navbar({ name, onNavigateContact, onNavigateSection }: NavbarPro
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-200/80">
-      <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-zinc-200/80">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
         
         {/* Brand */}
         <button 
           onClick={() => handleNavClick('beranda')}
-          className="text-left cursor-pointer group"
+          className="text-left cursor-pointer group py-2"
         >
-          <span className="font-bold text-zinc-900 text-base tracking-tight group-hover:text-zinc-600 transition-colors">
+          <span className="font-bold text-zinc-900 text-sm sm:text-base tracking-tight group-hover:text-zinc-600 transition-colors">
             {name}
           </span>
         </button>
@@ -50,12 +50,12 @@ export function Navbar({ name, onNavigateContact, onNavigateSection }: NavbarPro
           ))}
         </div>
 
-        {/* Actions */}
-        <div className="hidden sm:flex items-center gap-4">
+        {/* Actions & Mobile Nav Toggle */}
+        <div className="flex items-center gap-2 sm:gap-4">
           <a
             href="/PORTFOLIO_PPT_ADINDA.pdf"
             download
-            className="text-xs font-medium text-zinc-600 hover:text-zinc-950 flex items-center gap-1.5 transition-colors"
+            className="hidden sm:flex text-xs font-medium text-zinc-600 hover:text-zinc-950 items-center gap-1.5 transition-colors"
           >
             <Download size={14} />
             <span>Unduh CV</span>
@@ -63,51 +63,43 @@ export function Navbar({ name, onNavigateContact, onNavigateSection }: NavbarPro
 
           <button
             onClick={onNavigateContact}
-            className="text-xs font-semibold text-white bg-zinc-900 hover:bg-zinc-800 px-4 py-2 rounded-lg transition-colors cursor-pointer"
+            className="text-xs font-semibold text-white bg-zinc-900 hover:bg-zinc-800 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-lg transition-colors cursor-pointer min-h-[36px] sm:min-h-[40px] flex items-center"
           >
             Kontak
           </button>
-        </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-zinc-700 hover:text-zinc-950 cursor-pointer"
-          aria-label="Menu"
-        >
-          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+          {/* Mobile Hamburger (Min 44x44px touch area) */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100 transition-colors cursor-pointer"
+            aria-label="Menu Navigasi"
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-zinc-200 px-6 py-4 space-y-3">
+        <div className="md:hidden bg-white border-b border-zinc-200 px-4 py-3 space-y-1 shadow-sm">
           {navItems.map(item => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="block w-full text-left py-1 text-sm font-medium text-zinc-700 hover:text-zinc-950 cursor-pointer"
+              className="block w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-zinc-700 hover:text-zinc-950 hover:bg-zinc-50 active:bg-zinc-100 transition-colors cursor-pointer min-h-[44px] flex items-center"
             >
               {item.label}
             </button>
           ))}
-          <div className="pt-3 border-t border-zinc-100 flex flex-col gap-2.5">
+          <div className="pt-2 mt-2 border-t border-zinc-100 flex flex-col gap-2">
             <a
               href="/PORTFOLIO_PPT_ADINDA.pdf"
               download
-              className="text-xs font-medium text-zinc-700 py-1"
+              className="px-3 py-2.5 rounded-lg text-xs font-medium text-zinc-700 hover:bg-zinc-50 transition-colors flex items-center gap-2 min-h-[44px]"
             >
-              Unduh CV (PDF)
+              <Download size={15} />
+              <span>Unduh CV Lengkap (PDF)</span>
             </a>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false)
-                onNavigateContact()
-              }}
-              className="text-xs font-semibold text-center text-white bg-zinc-900 py-2.5 rounded-lg cursor-pointer"
-            >
-              Hubungi Adinda
-            </button>
           </div>
         </div>
       )}

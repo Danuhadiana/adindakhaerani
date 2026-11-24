@@ -6,7 +6,7 @@ interface ExperienceSectionProps {
 
 export function ExperienceSection({ experiences }: ExperienceSectionProps) {
   return (
-    <section id="pengalaman" className="py-12 border-b border-zinc-200/80 scroll-mt-20">
+    <section id="pengalaman" className="py-8 sm:py-12 border-b border-zinc-200/80 scroll-mt-16 sm:scroll-mt-20">
       <h2 className="text-xl font-bold text-zinc-950 tracking-tight mb-8">
         Pengalaman Kerja &amp; Praktik
       </h2>
