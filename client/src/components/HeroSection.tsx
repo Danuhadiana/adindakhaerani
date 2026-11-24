@@ -15,13 +15,6 @@ export function HeroSection({ profile, onNavigateContact }: HeroSectionProps) {
         {/* Left Column: Typography, Bio & Structured Metadata */}
         <div className="flex-1 min-w-0">
           
-          <div className="inline-flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
-              Portofolio Profesional
-            </span>
-          </div>
-
           <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-zinc-950 tracking-tight leading-tight">
             {profile.name}
           </h1>

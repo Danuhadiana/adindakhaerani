@@ -35,9 +35,6 @@ export function Navbar({ name, onNavigateContact, onNavigateSection }: NavbarPro
           <span className="font-bold text-zinc-900 text-base tracking-tight group-hover:text-zinc-600 transition-colors">
             {name}
           </span>
-          <span className="hidden sm:inline-block text-xs text-zinc-400 ml-2 font-normal">
-            Biologi &bull; Farmasi
-          </span>
         </button>
 
         {/* Desktop Navigation Links */}
